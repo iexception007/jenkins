@@ -10,10 +10,11 @@ RUN yum install -y make && \
     yum install -y python-pip && \
     pip install --upgrade pip && \
     pip install yq && \
-    wget -O /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl
+    wget -O /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl && \
+    chmod +x /usr/local/bin/kubectl && \
     wget -O docker.tgz https://download.docker.com/linux/static/stable/x86_64/docker-19.03.1.tgz && \
     gunzip -c docker.tgz | tar xvf - && \
-    mv docker/docker /usr/bin/docker && \
-    chmod +x /usr/bin/docker && \
+    mv docker/docker /usr/local/bin/docker && \
+    chmod +x /usr/local/bin/docker && \
     rm -rf ./docker ./docker.tgz && \
     yum clean all
