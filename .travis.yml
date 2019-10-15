@@ -1,0 +1,18 @@
+sudo: required
+
+services:
+- docker
+
+before_install:
+- REPO=iexception007/jenkins
+- VERSION=centos
+
+script:
+- docker build -t $REPO:$VERSION .
+
+deploy:
+  provider: script
+  script: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD && docker push $REPO:$VERSION
+  on:
+    all_branches: true
+    #condition: "$TRAVIS_BRANCH =~ ^v[0-9]+\\.[0-9]+(\\.[0-9]+)?(-\\S*)?$"
