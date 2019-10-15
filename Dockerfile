@@ -1,8 +1,9 @@
 FROM jenkins/jenkins:centos
 USER root
-RUN yum makecache && \
-    yum update && \
-    yum install -y make && \
+
+#RUN yum makecache && \
+#    yum update && \
+RUN yum install -y make && \
     yum install -y bzip2 && \
     yum install -y wget && \
     yum install -y python36 && \
