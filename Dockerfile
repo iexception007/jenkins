@@ -18,4 +18,5 @@ RUN yum install -y make && \
     mv docker/docker /usr/local/bin/docker && \
     chmod +x /usr/local/bin/docker && \
     rm -rf ./docker ./docker.tgz && \
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && \
     yum clean all
