@@ -4,11 +4,12 @@ USER root
 RUN yum install -y make && \
     yum install -y bzip2 && \
     yum install -y wget && \
-    yum install -y python36 && \
-    yum install -y python-pip && \
     yum install -y jq && \
-    pip install --upgrade pip && \
-    pip install yq && \
+    yum install -y git2u && \
+    yum install -y python36 && \
+    yum install -y python3-pip && \
+    pip3 install --upgrade pip3 && \
+    pip3 install yq && \
     wget -O /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl && \
     chmod +x /usr/local/bin/kubectl && \
     mkdir -p /root/.kube && \
