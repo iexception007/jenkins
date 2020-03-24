@@ -8,6 +8,8 @@ RUN yum install -y make && \
     yum install -y wget && \
     yum install -y python36 && \
     yum install -y python-pip && \
+    yum install -y git2u && \
+    yum install -y jq && \
     pip install --upgrade pip && \
     pip install yq && \
     wget -O /usr/local/bin/kubectl https://storage.googleapis.com/kubernetes-release/release/v1.16.0/bin/linux/amd64/kubectl && \
