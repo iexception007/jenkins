@@ -5,7 +5,7 @@ RUN yum install -y make && \
     yum install -y bzip2 && \
     yum install -y wget && \
     yum install -y jq && \
-    yum install -y git2u && \
+    #yum install -y git2u && \
     yum install -y python36 && \
     yum install -y python3-pip && \
     pip3 install --upgrade pip3 && \
